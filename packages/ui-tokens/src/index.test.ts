@@ -3,22 +3,22 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 
-import { qldThemeTokens, transportStatusTokens } from "./index";
+import { qldThemeTokens, workforceStatusTokens } from "./index";
 
 const sourceRoot = path.dirname(fileURLToPath(import.meta.url));
 
 const readPackageFile = (...segments: string[]) =>
   readFileSync(path.join(sourceRoot, ...segments), "utf-8");
 
-describe("@tmr/ui-tokens", () => {
+describe("@dewr/ui-tokens", () => {
   it("exports stable frontend token references", () => {
-    expect(transportStatusTokens).toEqual({
-      freeFlow: "var(--tmr-status-free-flow)",
-      moderate: "var(--tmr-status-moderate)",
-      congested: "var(--tmr-status-congested)",
-      severe: "var(--tmr-status-severe)",
-      freight: "var(--tmr-status-freight)",
-      publicTransport: "var(--tmr-status-public-transport)",
+    expect(workforceStatusTokens).toEqual({
+      strongOutcome: "var(--dewr-status-strong-outcome)",
+      moderateOutcome: "var(--dewr-status-moderate-outcome)",
+      skillsPressure: "var(--dewr-status-skills-pressure)",
+      highNeed: "var(--dewr-status-high-need)",
+      trainingPipeline: "var(--dewr-status-training-pipeline)",
+      participantSupport: "var(--dewr-status-participant-support)",
     });
 
     expect(qldThemeTokens).toEqual({
@@ -32,8 +32,8 @@ describe("@tmr/ui-tokens", () => {
   it("ships the CSS variables consumed by the app", () => {
     const styles = readPackageFile("styles.css");
 
-    expect(styles).toContain("--tmr-status-free-flow");
-    expect(styles).toContain("--tmr-status-public-transport");
+    expect(styles).toContain("--dewr-status-strong-outcome");
+    expect(styles).toContain("--dewr-status-participant-support");
     expect(styles).toContain("--QLD-color-light__action--primary");
     expect(styles).toContain("--QLD-color-dark__background");
   });

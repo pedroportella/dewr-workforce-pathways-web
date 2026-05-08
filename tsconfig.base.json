@@ -14,15 +14,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx",
     "paths": {
-      "@tmr/ui-library": ["./packages/ui-library/src/index.ts"],
-      "@tmr/ui-tokens": ["./packages/ui-tokens/src/index.ts"],
-      "@tmr/ui-assets/*": ["./packages/ui-assets/*"],
-      "@tmr/services-tmr": ["./packages/services-tmr/src/index.ts"],
-      "@tmr/services-tmr/mocks": ["./packages/services-tmr/src/mocks/index.ts"],
-      "@tmr/map-engine": ["./packages/map-engine/src/index.ts"],
-      "@tmr/utils": ["./packages/utils/src/index.ts"]
+      "@dewr/ui-library": ["./packages/ui-library/src/index.ts"],
+      "@dewr/ui-tokens": ["./packages/ui-tokens/src/index.ts"],
+      "@dewr/ui-assets/*": ["./packages/ui-assets/*"],
+      "@dewr/services-workforce": ["./packages/services-workforce/src/index.ts"],
+      "@dewr/services-workforce/mocks": ["./packages/services-workforce/src/mocks/index.ts"],
+      "@dewr/map-engine": ["./packages/map-engine/src/index.ts"],
+      "@dewr/utils": ["./packages/utils/src/index.ts"]
     }
   }
 }

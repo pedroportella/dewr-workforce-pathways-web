@@ -1,6 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 
-const TMR_ANALYST_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL_TMR ?? 'http://127.0.0.1:5173';
+const DEWR_ANALYST_BASE_URL = process.env.NEXT_PUBLIC_BASE_URL_DEWR ?? 'http://127.0.0.1:5173';
 
 export default defineConfig({
   testDir: './src/tests/e2e',
@@ -12,7 +12,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI ? [['github'], ['html', { open: 'never' }]] : [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: TMR_ANALYST_BASE_URL,
+    baseURL: DEWR_ANALYST_BASE_URL,
     screenshot: 'only-on-failure',
     trace: 'retain-on-failure',
     video: 'retain-on-failure',
@@ -21,7 +21,7 @@ export default defineConfig({
   },
   webServer: {
     command: 'NEXT_PUBLIC_USE_API_MOCKS=true pnpm exec vite --host 127.0.0.1 --port 5173 --strictPort',
-    url: TMR_ANALYST_BASE_URL,
+    url: DEWR_ANALYST_BASE_URL,
     reuseExistingServer: !process.env.CI,
     timeout: 120000
   },

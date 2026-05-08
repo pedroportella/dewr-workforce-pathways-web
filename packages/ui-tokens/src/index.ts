@@ -1,10 +1,10 @@
-export const transportStatusTokens = {
-  freeFlow: 'var(--tmr-status-free-flow)',
-  moderate: 'var(--tmr-status-moderate)',
-  congested: 'var(--tmr-status-congested)',
-  severe: 'var(--tmr-status-severe)',
-  freight: 'var(--tmr-status-freight)',
-  publicTransport: 'var(--tmr-status-public-transport)'
+export const workforceStatusTokens = {
+  strongOutcome: 'var(--dewr-status-strong-outcome)',
+  moderateOutcome: 'var(--dewr-status-moderate-outcome)',
+  skillsPressure: 'var(--dewr-status-skills-pressure)',
+  highNeed: 'var(--dewr-status-high-need)',
+  trainingPipeline: 'var(--dewr-status-training-pipeline)',
+  participantSupport: 'var(--dewr-status-participant-support)'
 } as const;
 
 export const qldThemeTokens = {

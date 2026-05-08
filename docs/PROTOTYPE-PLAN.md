@@ -1,21 +1,12 @@
 # Prototype Plan
 
-## Product concept
+**DEWR Workforce Pathways Intelligence** provides a realistic workforce analytics workflow for
+employment, skills, training and participant outcome decisions.
 
-**SEQ Corridor Scenario Explorer** provides a realistic transport analytics workflow for analysts and stakeholders.
+## Delivery Slices
 
-## Delivered slice
-
-- Select a scenario.
-- Compare corridor KPIs.
-- Inspect links on a MapLibre map.
-- Toggle operational layers.
-- Switch time periods for temporal analysis.
-
-## Next feature increments
-
-- Add scenario side-by-side split map.
-- Add deck.gl trips or path layer for temporal movement.
-- Add accessibility heatmap using travel-time catchments.
-- Add authentication shell and role-based navigation.
-- Replace mock data with FastAPI contracts.
+- Vue 3 analyst shell with scenario controls and regional insight view.
+- Service DTO mapping and mock API strategy.
+- REST services API with SQL Server-style persistence contracts.
+- Synthetic labour-market event producer.
+- Unit, contract and Playwright tests that can be run independently per repo.
