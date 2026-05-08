@@ -1,0 +1,128 @@
+{
+  "scenarios": [
+    {
+      "scenarioId": "baseline-support",
+      "displayName": "Baseline employment services",
+      "summary": "Current caseload, provider coverage and training pipeline settings.",
+      "horizonQuarter": "2026 Q2"
+    },
+    {
+      "scenarioId": "regional-skills-accelerator",
+      "displayName": "Regional skills accelerator",
+      "summary": "Prioritises short-cycle training places against regional vacancy pressure and skills gaps.",
+      "horizonQuarter": "2026 Q4"
+    },
+    {
+      "scenarioId": "youth-pathways-boost",
+      "displayName": "Youth pathways boost",
+      "summary": "Targets youth cohorts with work experience, foundation skills and employer matching.",
+      "horizonQuarter": "2027 Q1"
+    }
+  ],
+  "kpis": [
+    {
+      "scenarioId": "baseline-support",
+      "metrics": {
+        "employmentRatePercent": 62.4,
+        "vacancies": 18420,
+        "skillsGapIndex": 71,
+        "trainingCompletions": 9360,
+        "sustainedOutcomeRatePercent": 48.2
+      }
+    },
+    {
+      "scenarioId": "regional-skills-accelerator",
+      "metrics": {
+        "employmentRatePercent": 66.8,
+        "vacancies": 15110,
+        "skillsGapIndex": 55,
+        "trainingCompletions": 12880,
+        "sustainedOutcomeRatePercent": 54.6
+      }
+    },
+    {
+      "scenarioId": "youth-pathways-boost",
+      "metrics": {
+        "employmentRatePercent": 64.1,
+        "vacancies": 16240,
+        "skillsGapIndex": 61,
+        "trainingCompletions": 11320,
+        "sustainedOutcomeRatePercent": 52.9
+      }
+    }
+  ],
+  "regions": {
+    "features": [
+      {
+        "regionId": "sa4-brisbane-inner",
+        "displayName": "Brisbane Inner City",
+        "state": "QLD",
+        "primaryIndustry": "Health care and social assistance",
+        "employmentRatePercent": 68.9,
+        "vacancies": 2860,
+        "skillsGapIndex": 48,
+        "trainingCompletions": 1480,
+        "sustainedOutcomeRatePercent": 57.8,
+        "participantCount": 6240,
+        "cohort": "all",
+        "geometry": { "type": "Point", "coordinates": [153.0251, -27.4698] }
+      },
+      {
+        "regionId": "sa4-logan-beaudesert",
+        "displayName": "Logan - Beaudesert",
+        "state": "QLD",
+        "primaryIndustry": "Construction",
+        "employmentRatePercent": 59.7,
+        "vacancies": 2240,
+        "skillsGapIndex": 66,
+        "trainingCompletions": 1060,
+        "sustainedOutcomeRatePercent": 49.4,
+        "participantCount": 9120,
+        "cohort": "participant",
+        "geometry": { "type": "Point", "coordinates": [153.1094, -27.6392] }
+      },
+      {
+        "regionId": "sa4-townsville",
+        "displayName": "Townsville",
+        "state": "QLD",
+        "primaryIndustry": "Manufacturing",
+        "employmentRatePercent": 61.5,
+        "vacancies": 1320,
+        "skillsGapIndex": 73,
+        "trainingCompletions": 760,
+        "sustainedOutcomeRatePercent": 47.1,
+        "participantCount": 4380,
+        "cohort": "youth",
+        "geometry": { "type": "Point", "coordinates": [146.8179, -19.259] }
+      },
+      {
+        "regionId": "sa4-mandurah",
+        "displayName": "Mandurah",
+        "state": "WA",
+        "primaryIndustry": "Accommodation and food services",
+        "employmentRatePercent": 56.8,
+        "vacancies": 980,
+        "skillsGapIndex": 69,
+        "trainingCompletions": 540,
+        "sustainedOutcomeRatePercent": 44.6,
+        "participantCount": 3820,
+        "cohort": "matureAge",
+        "geometry": { "type": "Point", "coordinates": [115.7217, -32.536] }
+      },
+      {
+        "regionId": "sa4-northern-territory-outback",
+        "displayName": "Northern Territory - Outback",
+        "state": "NT",
+        "primaryIndustry": "Public administration and safety",
+        "employmentRatePercent": 53.2,
+        "vacancies": 740,
+        "skillsGapIndex": 78,
+        "trainingCompletions": 360,
+        "sustainedOutcomeRatePercent": 42.8,
+        "participantCount": 2140,
+        "cohort": "firstNations",
+        "geometry": { "type": "Point", "coordinates": [133.7751, -23.698] }
+      }
+    ]
+  }
+}

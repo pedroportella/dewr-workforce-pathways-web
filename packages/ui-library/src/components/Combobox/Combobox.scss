@@ -1,0 +1,132 @@
+// packages/ui-library/src/components/Combobox/Combobox.scss
+
+/* Re-use the same class hooks as your sample so it inherits site-wide styling */
+.qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu_list-item a {
+  max-width: 100%;
+}
+
+/* Optional focus state hint for active item */
+.qld__overflow_menu_list-item-link--active {
+  outline: 2px solid var(--QLD-color-light__focus);
+  outline-offset: -2px;
+}
+
+  .qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu_list-item {
+    height: auto;
+  }
+
+  /* --------------------------------------------------------------------------- 
+    
+    Auto-complete syltes
+    
+    --------------------------------------------------------------------------- */
+    
+    /* Autocomplete container */
+    .qld__combobox-form--wrapper {
+        position: relative;
+
+          .qld__search-icon {
+            position: absolute;
+            bottom: 1rem;
+            left: 1rem;
+          }
+    }
+    
+    /* Autocomplete list container */
+    .qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu {
+        position: absolute;
+        top: calc(100% + 4px);
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        right: 0;
+        max-height: 650px;
+        overflow-y: auto;
+    }
+
+    .qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu_list-item a{
+        max-width:100%;  /* Fix max width on a tags*/
+    }
+    
+    /* Icons in autocomplete list items */
+    .qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu_list-item-link svg {
+        vertical-align: text-bottom;
+    }
+    
+    /* Category headers in autocomplete */
+    .qld__category-header {
+        padding: 1rem 0.75rem;
+        font-weight: 600;
+        background-color: var(--QLD-color-light__background--shade);
+        border-bottom: 1px solid var(--QLD-color-neutral--lighter);;
+        color: var(--QLD-color-light__heading);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    /* Tags in autocomplete */
+    .qld__overflow_menu span.qld__tag.qld__tag--info {
+        background: var(--QLD-color-light__background--shade);
+        margin-left: 0.5rem;
+    }
+    
+    /* Search icon in combo-box form field */
+    .qld__combobox-form--wrapper .qld__search-form__inner .qld__search-icon{
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+    }
+    
+    /* Padding adjustment for form field in combo-box to account for search icon */
+    .qld__combobox-form--wrapper input{
+        padding-left:2.5rem;
+    }
+    
+    /* Fix for overflow menu sitting in an accordions and a tables where some padding font styles were being applied to li items inccoreclty */
+    .qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu_list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        font-weight:400;
+    }
+    
+    
+    /* Responsive styles for tags in autocompelte*/
+    @media (max-width: 699px) {
+        .qld__combobox-form--wrapper.qld__overflow_menu_wrapper span.qld__tag.qld__tag--info {
+            display: block;
+            margin-left: 0;
+            margin-top: 8px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 100%;
+            border-radius: 8px;
+            text-align: left;
+            width: fit-content;
+            overflow: hidden;
+        }
+    
+        .qld__combobox-form--wrapper.qld__overflow_menu_wrapper svg.qld__icon--lead {
+            margin-right: 4px;
+        }
+        
+        .qld__combobox-form--wrapper .qld__overflow_menu_list-item-link{
+            font-size:14px;
+        }
+        
+        .qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu_list-item {
+            min-height: 44px;
+            height: auto;
+        }
+    
+        .qld__combobox-form--wrapper.qld__overflow_menu_wrapper svg {
+            font-size: 1rem;
+        }
+    }
+    
+    /* Stops autocomplete from triggering table scroll*/
+    .qld__hospital-data__table .qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu {
+    max-height: 200px;
+    }
+    

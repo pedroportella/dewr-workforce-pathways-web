@@ -1,0 +1,95 @@
+.dewr-shell {
+  min-height: 100vh;
+  color: #152238;
+  background: #f6f8fb;
+}
+
+.dewr-shell__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 32px;
+  color: white;
+  background: #16324f;
+}
+
+.dewr-shell__brand {
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.dewr-shell__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dewr-shell__nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.dewr-shell__main {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 28px 32px 40px;
+}
+
+.dewr-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid #16324f;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dewr-button--primary {
+  color: white;
+  background: #1d5f73;
+}
+
+.dewr-button--secondary {
+  color: #16324f;
+  background: white;
+}
+
+.dewr-kpi-card,
+.dewr-panel {
+  border: 1px solid #d8e0ea;
+  border-radius: 8px;
+  background: white;
+}
+
+.dewr-kpi-card {
+  display: grid;
+  gap: 8px;
+  min-height: 132px;
+  padding: 18px;
+}
+
+.dewr-kpi-card__label,
+.dewr-kpi-card__trend {
+  color: #526171;
+  font-size: 0.92rem;
+}
+
+.dewr-kpi-card__value {
+  color: #16324f;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.dewr-panel {
+  padding: 20px;
+}
+
+.dewr-panel__title {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "dewr-workforce-pathways-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DEWR Workforce Pathways Intelligence prototype using Vue 3, TypeScript, pnpm workspaces, design tokens, service DTO mapping and automated tests.",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev": "pnpm --filter @dewr/analyst dev",
+    "build": "pnpm -r --filter './packages/**' build && pnpm --filter @dewr/analyst build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "test:e2e": "pnpm --filter @dewr/analyst test:e2e",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "@vue/test-utils": "latest",
+    "@types/node": "latest",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "eslint": "latest",
+    "globals": "latest",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "latest",
+    "vite": "^5.4.21",
+    "vue": "latest",
+    "vitest": "^1.6.1",
+    "jsdom": "^24.1.3",
+    "sass": "latest",
+    "@playwright/test": "1.42.1"
+  }
+}

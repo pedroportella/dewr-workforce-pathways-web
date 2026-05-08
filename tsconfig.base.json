@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "paths": {
+      "@tmr/ui-library": ["./packages/ui-library/src/index.ts"],
+      "@tmr/ui-tokens": ["./packages/ui-tokens/src/index.ts"],
+      "@tmr/ui-assets/*": ["./packages/ui-assets/*"],
+      "@tmr/services-tmr": ["./packages/services-tmr/src/index.ts"],
+      "@tmr/services-tmr/mocks": ["./packages/services-tmr/src/mocks/index.ts"],
+      "@tmr/map-engine": ["./packages/map-engine/src/index.ts"],
+      "@tmr/utils": ["./packages/utils/src/index.ts"]
+    }
+  }
+}

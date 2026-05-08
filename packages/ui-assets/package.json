@@ -1,0 +1,25 @@
+{
+  "name": "@tmr/ui-assets",
+  "version": "0.1.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "icons",
+    "images",
+    "logos",
+    "fonts",
+    "index.d.ts",
+    "package.json",
+    "README.md"
+  ],
+  "exports": {
+    "./icons/qld-icons-url": "./icons/qld-icons-url.ts",
+    "./icons/svg-icons-url": "./icons/svg-icons-url.ts",
+    "./icons/*": "./icons/*",
+    "./images/*": "./images/*",
+    "./logos/header-logo-qgov-url": "./logos/header-logo-qgov-url.ts",
+    "./logos/*": "./logos/*",
+    "./fonts/*": "./fonts/*"
+  },
+  "dependencies": {}
+}

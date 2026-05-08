@@ -1,0 +1,6 @@
+.qld__body *:not([type="hidden"]):not(p) + p {
+  &.dcir__fieldset__description {
+    font-weight: normal;
+    margin-top: 0.5rem;
+  }
+}

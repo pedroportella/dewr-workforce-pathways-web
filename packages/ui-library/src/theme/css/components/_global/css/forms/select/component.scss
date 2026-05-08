@@ -1,0 +1,290 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Select wrapper to allow for the usage of icons
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.qld__select {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-bottom: pxToRem(1.5) solid var(--QLD-color-light__action--secondary);
+    border-right: pxToRem(1.5) solid var(--QLD-color-light__action--secondary);
+    transform: rotate(45deg) translateY(-100%);
+    right: pxToRem(24);
+    top: 50%;
+    pointer-events: none;
+    @include QLD-space(margin-top, 0.2unit);
+  }
+
+  &:has(> select[multiple]) {
+    &::after {
+      content: none;
+    }
+  }
+
+  .qld__input--success + &,
+  .qld__input--alert + &,
+  .qld__input--error + & {
+    @include QLD-space(margin-top, 0.5unit);
+    display: flex;
+  }
+
+  &:has(select:hover)::after {
+    border-color: var(--QLD-color-light__action--secondary-hover);
+  }
+
+  &:has(select:focus)::after {
+    border-color: var(--QLD-color-light__action--secondary);
+  }
+
+  &:has(select.qld__text-input--error)::after,
+  &:has(select.qld__text-input--error:hover)::after {
+    border-color: var(--QLD-color-status__error);
+  }
+
+  &:has(select.qld__text-input--error:focus)::after {
+    border-color: var(--QLD-color-light__action--secondary);
+  }
+
+  &:has(select.qld__text-input--valid)::after,
+  &:has(select.qld__text-input--valid:hover)::after {
+    border-color: var(--QLD-color-status__success);
+  }
+
+  &:has(select.qld__text-input--valid:focus)::after {
+    border-color: var(--QLD-color-light__action--secondary);
+  }
+
+  &:has(select:disabled)::after {
+    border-color: var(--QLD-color-light__text--lighter);
+  }
+
+  .qld__body--dark &,
+  .qld__body--dark-alt & {
+    &::after {
+      border-color: var(--QLD-color-dark__action--secondary);
+    }
+    &:has(select:hover)::after {
+      border-color: var(--QLD-color-dark__action--secondary-hover);
+    }
+    &:has(select:focus)::after {
+      border-color: var(--QLD-color-light__action--secondary);
+    }
+    &:has(select.qld__text-input--error)::after,
+    &:has(select.qld__text-input--error:hover)::after {
+      border-color: var(--QLD-color-status__error);
+    }
+    &:has(select.qld__text-input--error:focus)::after {
+      border-color: var(--QLD-color-light__action--secondary);
+    }
+    &:has(select.qld__text-input--valid)::after,
+    &:has(select.qld__text-input--valid:hover)::after {
+      border-color: var(--QLD-color-status__success);
+    }
+    &:has(select.qld__text-input--valid:focus)::after {
+      border-color: var(--QLD-color-light__action--secondary);
+    }
+    &:has(select:disabled)::after {
+      border-color: var(--QLD-color-dark__text--lighter);
+    }
+  }
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Matrix styling - select-error to allow for the usage of icons
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.qld__select-error {
+  &:has(select)::after,
+  &:has(select:hover)::after {
+    border-color: var(--QLD-color-status__error);
+  }
+  &:has(select:focus)::after {
+    border-color: var(--QLD-color-light__action--secondary);
+  }
+
+  .qld__body--dark &,
+  .qld__body--dark-alt & {
+    &:has(select)::after,
+    &:has(select:hover)::after {
+      border-color: var(--QLD-color-status__error);
+    }
+    &:has(select:focus)::after {
+      border-color: var(--QLD-color-light__action--secondary);
+    }
+  }
+}
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Select box
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+.sq-form-question-select select,
+.sq-form-question-datetime select,
+.qld__select-control,
+select {
+  color: var(--QLD-color-light__text--lighter);
+  @include QLD-space(padding, 0.75unit 2unit 0.75unit 1unit);
+  border: var(--QLD-border-width-default) solid var(--QLD-color-light__border--alt);
+  border-radius: var(--QLD-border-radius-xs);
+  background-color: var(--QLD-color-light__background);
+  appearance: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  text-indent: 0.01px;
+  text-overflow: unset;
+  vertical-align: middle;
+  width: 100%;
+  @include QLD-focus();
+  @include QLD-space(margin-top, 0.5unit);
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:hover:not(:focus) {
+    background-color: var(--QLD-color-light__background--shade);
+    border-color: var(--QLD-color-light__action--primary-hover);
+  }
+
+  &:disabled,
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: transparent !important;
+      border-color: var(--QLD-color-light__border--alt);
+    }
+  }
+
+  .qld__input--success + &,
+  .qld__input--error + & {
+    @include QLD-space(margin-top, 0.5unit);
+    display: flex;
+  }
+
+  &.qld__text-input--valid:not(:focus) {
+    border-color: var(--QLD-color-status__success);
+    background-color: var(--QLD-color-status__success--lightest);
+  }
+
+  &.qld__input--error,
+  &.qld__text-input--error {
+    border-color: var(--QLD-color-status__error);
+    background-color: RGBA(226, 35, 57, 0.05);
+
+    option {
+      border-color: var(--QLD-color-status__error);
+      background-color: var(--QLD-color-status__error--lightest);
+      color: var(--QLD-color-dark__text--darker);
+    }
+
+    &:not(:focus) {
+      border-color: var(--QLD-color-status__error);
+      background-color: var(--QLD-color-status__error--lightest);
+      color: var(--QLD-color-dark__text--darker);
+    }
+
+    &:hover:not(:focus) {
+      border-color: var(--QLD-color-status__error);
+      background-color: var(--QLD-color-status__error--lighter);
+    }
+  }
+
+  &:focus {
+    border-color: var(--QLD-color-neutral--lighter);
+  }
+
+  .qld__body--dark &,
+  .qld__body--dark-alt & {
+    color: var(--QLD-color-dark__text--lighter);
+    border-color: var(--QLD-color-dark__border--alt);
+    background-color: var(--QLD-color-dark__background);
+
+    &.qld__text-input--valid {
+      border-color: var(--QLD-color-status__success);
+      background-color: var(--QLD-color-status__success--lightest);
+      color: var(--QLD-color-light__text);
+
+      &:hover:not(:focus) {
+        background-color: var(--QLD-color-status__success--lighter);
+        border-color: var(--QLD-color-status__success);
+      }
+
+      &::placeholder {
+        color: var(--QLD-color-light__text--lighter);
+      }
+    }
+
+    &.qld__input--error,
+    &.qld__text-input--error {
+      border-color: var(--QLD-color-status__error);
+      background-color: var(--QLD-color-light__background);
+      color: var(--QLD-color-light__text);
+
+      &:hover:not(:focus) {
+        background-color: var(--QLD-color-light__background);
+        border-color: var(--QLD-color-status__error);
+        color: var(--QLD-color-dark__text--darker);
+      }
+
+      &:focus {
+        background-color: var(--QLD-color-light__background);
+        color: var(--QLD-color-light__text);
+        border-color: var(--QLD-color-neutral--lighter);
+      }
+
+      &::placeholder {
+        color: var(--QLD-color-light__text);
+      }
+    }
+
+    &:hover:not(:focus) {
+      background-color: var(--QLD-color-neutral--black__opacity-10);
+      border-color: var(--QLD-color-dark__action--primary-hover);
+    }
+
+    &:disabled,
+    &[disabled] {
+      &:hover {
+        border-color: var(--QLD-color-dark__border--alt);
+      }
+    }
+
+    &:focus {
+      background-color: var(--QLD-color-light__background--shade);
+      color: var(--QLD-color-light__text);
+      border-color: var(--QLD-color-neutral--lighter);
+
+      &::placeholder {
+        color: var(--QLD-color-light__text--lighter);
+      }
+    }
+  }
+}
+
+@media print {
+  .sq-form-question-select select,
+  .qld__select-control {
+    border-color: var(--QLD-color-neutral--black);
+  }
+
+  .qld__select {
+    .qld__body--dark &,
+    .qld__body--dark-alt & {
+      &::after {
+        border-color: var(--QLD-color-light__action--secondary);
+      }
+    }
+  }
+}

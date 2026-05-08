@@ -1,0 +1,54 @@
+.qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu_list-item a {
+  max-width: 100%;
+}
+
+.qld__overflow_menu_list-item-link--active {
+  outline: 2px solid var(--QLD-color-light__focus);
+  outline-offset: -2px;
+}
+
+.qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu_list-item {
+  height: auto;
+}
+
+.qld__combobox-form--wrapper {
+  position: relative;
+}
+
+.qld__combobox-form--wrapper .qld__search-icon,
+.qld__combobox-form--wrapper .qld__search-form__inner .qld__search-icon {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  width: 100%;
+  max-width: 100%;
+  left: 0;
+  right: 0;
+  max-height: 650px;
+  overflow-y: auto;
+}
+
+.qld__combobox-form--wrapper.qld__overflow_menu_wrapper .qld__overflow_menu_list-item-link svg {
+  vertical-align: text-bottom;
+}
+
+.qld__category-header {
+  padding: 1rem 0.75rem;
+  font-weight: 600;
+  background-color: var(--QLD-color-light__background--shade);
+  border-bottom: 1px solid var(--QLD-color-neutral--lighter);
+  color: var(--QLD-color-light__heading);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.qld__overflow_menu span.qld__tag.qld__tag--info {
+  background: var(--QLD-color-light__background--shade);
+  margin-left: 0.5rem;
+}

@@ -1,0 +1,1 @@
+export { workforceHandlers } from './handlers';

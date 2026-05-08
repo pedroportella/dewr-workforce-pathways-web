@@ -1,0 +1,24 @@
+{
+  "name": "@dewr/ui-library",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./styles.css": "./src/styles.css"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest run src/vue --passWithNoTests"
+  },
+  "dependencies": {
+    "@dewr/ui-tokens": "workspace:*",
+    "@dewr/utils": "workspace:*",
+    "vue": "latest"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "latest"
+  }
+}

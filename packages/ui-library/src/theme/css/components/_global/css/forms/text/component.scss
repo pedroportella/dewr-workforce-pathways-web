@@ -1,0 +1,239 @@
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+// Text inputs
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+.qld__text-input,
+textarea {
+  color: var(--QLD-color-light__text);
+  @include QLD-space(padding, 0.75unit 1unit);
+  border-radius: var(--QLD-border-radius-xs);
+  border: var(--QLD-border-width-default) solid var(--QLD-color-light__border--alt);
+  background-color: var(--QLD-color-light__background);
+  box-sizing: border-box;
+  appearance: none;
+  max-width: 46rem;
+
+  @include QLD-focus();
+
+  &::placeholder {
+    color: var(--QLD-color-light__text--lighter);
+  }
+
+  &.qld__text-input--valid {
+    color: var(--QLD-color-light__text);
+    border-color: var(--QLD-color-status__success);
+    background-color: var(--QLD-color-status__success--lightest);
+
+    &:hover:not(:focus) {
+      background-color: var(--QLD-color-status__success--lighter);
+      border-color: var(--QLD-color-status__success);
+      color: var(--QLD-color-light__text);
+    }
+
+    &:focus {
+      background-color: var(--QLD-color-light__background);
+      border-color: var(--QLD-color-neutral--lighter);
+    }
+  }
+
+  &.qld__input--error {
+    border-color: var(--QLD-color-status__error);
+    background-color: rgba(226, 35, 57, 0.05);
+  }
+
+  .qld__input--success + &,
+  .qld__input--alert + &,
+  .qld__input--error + & {
+    @include QLD-space(margin-top, 0.5unit);
+    display: block;
+  }
+
+  &.qld__text-input--error {
+    &:not(:focus) {
+      border-color: var(--QLD-color-status__error);
+      background-color: var(--QLD-color-status__error--lightest);
+      color: var(--QLD-color-dark__text--darker);
+    }
+
+    &:hover:not(:focus) {
+      border-color: var(--QLD-color-status__error);
+      background-color: var(--QLD-color-status__error--lighter);
+      color: var(--QLD-color-dark__text--darker);
+    }
+  }
+
+  &.qld__text-input--alert {
+    &:not(:focus) {
+      border-color: var(--QLD-color-status__alert);
+      background-color: var(--QLD-color-status__alert--lightest);
+    }
+
+    &:hover:not(:focus) {
+      border-color: var(--QLD-color-status__alert);
+      background-color: var(--QLD-color-status__alert--lighter);
+    }
+  }
+
+  &:hover {
+    &:not(:focus):not(.qld__text-input--error):not(.qld__text-input--valid) {
+      background-color: var(--QLD-color-light__background--shade);
+      border-color: var(--QLD-color-light__action--primary-hover);
+    }
+  }
+
+  &[disabled],
+  &:disabled {
+    cursor: not-allowed;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    opacity: 0.5;
+
+    &:hover,
+    &:hover:not(.qld__text-input--error):not(.qld__text-input--valid) {
+      background-color: transparent;
+      border-color: var(--QLD-color-light__border--alt);
+    }
+  }
+
+  &[aria-expanded="true"],
+  &:hover[aria-expanded="true"] {
+    background-color: var(--QLD-color-light__background);
+  }
+
+  &:focus {
+    background-color: var(--QLD-color-light__background);
+    border-radius: var(--QLD-border-radius-xs);
+    border: var(--QLD-border-width-default) solid var(--QLD-color-neutral--lighter);
+
+    &::placeholder {
+      color: var(--QLD-color-light__text--lighter);
+    }
+
+    &::selection {
+      background-color: var(--QLD-color-dark__background);
+      color: var(--QLD-color-dark__text);
+    }
+  }
+
+  .qld__body--dark &,
+  .qld__body--dark-alt &,
+  .qld__header__main--dark &,
+  .qld__header__main--dark-alt &,
+  .qld__banner--dark &,
+  .qld__banner--dark-alt & {
+    color: var(--QLD-color-dark__text--lighter);
+    border-color: var(--QLD-color-dark__border--alt);
+    background-color: var(--QLD-color-dark__background);
+
+    &::placeholder {
+      color: var(--QLD-color-dark__text--lighter);
+    }
+
+    &:focus {
+      background-color: var(--QLD-color-light__background);
+      border-color: var(--QLD-color-neutral--lighter);
+
+      &::placeholder {
+        color: var(--QLD-color-light__text--lighter);
+      }
+
+      &::selection {
+        background-color: var(--QLD-color-dark__background);
+        color: var(--QLD-color-dark__text);
+      }
+    }
+
+    @include QLD-focus(dark);
+
+    &:focus,
+    &:active {
+      background-color: var(--QLD-color-light__background);
+      color: var(--QLD-color-light__text);
+    }
+
+    &.qld__input--valid {
+      color: var(--QLD-color-light__text);
+    }
+
+    &.qld__input--error {
+      border-color: var(--QLD-color-status__error);
+      background-color: rgba(226, 35, 57, 0.05);
+    }
+
+    &.qld__text-input--valid {
+      color: var(--QLD-color-light__text);
+      border-color: var(--QLD-color-status__success);
+      background-color: var(--QLD-color-status__success--lightest);
+
+      &:hover:not(:focus) {
+        background-color: var(--QLD-color-status__success--lighter);
+        border-color: var(--QLD-color-status__success);
+        color: var(--QLD-color-light__text);
+      }
+
+      &:focus {
+        background-color: var(--QLD-color-light__background);
+        border-color: var(--QLD-color-neutral--lighter);
+      }
+
+      &::placeholder {
+        color: var(--QLD-color-light__text--lighter);
+      }
+    }
+
+    &.qld__text-input--error {
+      &:hover:not(:focus) {
+        border-color: var(--QLD-color-status__error);
+        background-color: var(--QLD-color-status__error--lighter);
+        color: var(--QLD-color-light__text);
+      }
+
+      &::placeholder {
+        color: var(--QLD-color-light__text--lighter);
+      }
+      color: var(--QLD-color-light__text);
+    }
+
+    &.qld__text-input--alert {
+      &:hover:not(:focus) {
+        border-color: var(--QLD-color-status__alert);
+        background-color: var(--QLD-color-status__alert--lighter);
+        color: var(--QLD-color-light__text);
+      }
+
+      &::placeholder {
+        color: var(--QLD-color-light__text--lighter);
+      }
+      color: var(--QLD-color-light__text);
+    }
+
+    &:hover {
+      &:not(:focus):not(.qld__text-input--error):not(.qld__text-input--valid) {
+        color: var(--QLD-color-dark__text);
+        background-color: var(--QLD-color-neutral--black__opacity-10);
+        border-color: var(--QLD-color-dark__action--primary-hover);
+      }
+    }
+
+    &[disabled],
+    &:disabled {
+      cursor: not-allowed;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+      opacity: 0.5;
+
+      &:hover,
+      &:hover:not(.qld__text-input--error):not(.qld__text-input--valid) {
+        background-color: transparent;
+        border-color: var(--QLD-color-dark__border--alt);
+      }
+    }
+
+    &[aria-expanded="true"],
+    &:hover[aria-expanded="true"] {
+      color: var(--QLD-color-light__text);
+      background-color: var(--QLD-color-light__background);
+    }
+  }
+}
