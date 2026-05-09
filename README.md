@@ -19,6 +19,22 @@ NEXT_PUBLIC_USE_API_MOCKS=true pnpm dev
 
 The app runs at `http://127.0.0.1:5173`.
 
+## CI / GitHub Actions
+
+The repository uses GitHub Actions to validate the workspace on `main` and pull requests.
+
+The CI workflow runs:
+
+- `pnpm install --frozen-lockfile`
+- `pnpm lint`
+- `pnpm test`
+- `pnpm typecheck`
+- `pnpm build`
+- `pnpm exec playwright install --with-deps chromium`
+- `pnpm test:e2e`
+
+Playwright HTML output is published as a workflow artifact from `apps/analyst/playwright-report`.
+
 ## Key packages
 
 - `apps/analyst`: Vue 3 analyst experience.
