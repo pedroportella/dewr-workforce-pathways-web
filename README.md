@@ -23,6 +23,8 @@ The app runs at `http://127.0.0.1:5173`.
 
 The repository uses GitHub Actions to validate the workspace on `main` and pull requests.
 
+CI uses Node.js 24 with Corepack-managed `pnpm@9.15.4`, matching the `packageManager` field in `package.json`. The Playwright end-to-end job is pinned to `ubuntu-22.04` because the current `@playwright/test@1.42.1` Linux dependency installer requests `libasound2`, which is no longer available under that name on Ubuntu 24.04 (`ubuntu-latest` / Noble).
+
 The CI workflow runs:
 
 - `pnpm install --frozen-lockfile`
@@ -34,6 +36,18 @@ The CI workflow runs:
 - `pnpm test:e2e`
 
 Playwright HTML output is published as a workflow artifact from `apps/analyst/playwright-report`.
+
+For local handover checks, run:
+
+```bash
+pnpm install --frozen-lockfile
+pnpm lint
+pnpm test
+pnpm typecheck
+pnpm build
+pnpm exec playwright install --with-deps chromium
+pnpm test:e2e
+```
 
 ## Key packages
 

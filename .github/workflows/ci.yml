@@ -30,7 +30,7 @@ jobs:
 
   e2e:
     name: Playwright end-to-end
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: install-and-verify
     steps:
       - uses: actions/checkout@v4

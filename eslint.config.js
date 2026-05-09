@@ -1,10 +1,10 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import vuePlugin from 'eslint-plugin-vue';
-import vueParser from 'vue-eslint-parser';
-import tseslint from 'typescript-eslint';
+const js = require('@eslint/js');
+const globals = require('globals');
+const vuePlugin = require('eslint-plugin-vue');
+const vueParser = require('vue-eslint-parser');
+const tseslint = require('typescript-eslint');
 
-export default tseslint.config(
+module.exports = tseslint.config(
   { ignores: ['dist/**', 'build/**', 'coverage/**', 'node_modules/**', 'playwright-report/**', 'test-results/**'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,

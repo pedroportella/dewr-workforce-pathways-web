@@ -83,9 +83,9 @@ function toggleLayer(layer: WorkforceLayerId) {
         <DewrKpiCard label="Sustained outcomes" :value="`${selectedKpis.sustainedOutcomeRatePercent.toFixed(1)}%`" trend="26 week outcome rate" />
       </section>
 
-      <section class="dewr-workspace" id="regional-insights">
+      <section id="regional-insights" class="dewr-workspace">
         <DewrPanel title="Pathway controls">
-          <div class="dewr-control-stack" id="pathway-controls">
+          <div id="pathway-controls" class="dewr-control-stack">
             <label class="dewr-field">
               <span>Scenario</span>
               <select v-model="selectedScenarioId">
@@ -126,7 +126,7 @@ function toggleLayer(layer: WorkforceLayerId) {
         </DewrPanel>
       </section>
 
-      <section class="dewr-delivery" id="delivery-evidence">
+      <section id="delivery-evidence" class="dewr-delivery">
         <h2>Delivery evidence</h2>
         <p>
           The prototype keeps REST integration, DTO mapping, mock APIs, source-controlled package
