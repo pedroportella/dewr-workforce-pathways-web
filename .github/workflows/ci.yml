@@ -17,7 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v5
         with:
-          node-version: '24'
+          node-version: '20.19.0'
           package-manager-cache: false
       - run: corepack enable
       - run: corepack prepare pnpm@9.15.4 --activate
@@ -27,6 +27,7 @@ jobs:
       - run: pnpm test
       - run: pnpm typecheck
       - run: pnpm build
+      - run: docker build -t dewr-workforce-pathways-web:ci .
 
   e2e:
     name: Playwright end-to-end
@@ -36,7 +37,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v5
         with:
-          node-version: '24'
+          node-version: '20.19.0'
           package-manager-cache: false
       - run: corepack enable
       - run: corepack prepare pnpm@9.15.4 --activate

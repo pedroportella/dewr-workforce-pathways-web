@@ -1,0 +1,10 @@
+node_modules
+apps/analyst/dist
+apps/analyst/playwright-report
+apps/analyst/test-results
+packages/**/dist
+.git
+.github
+.DS_Store
+*.log
+.env

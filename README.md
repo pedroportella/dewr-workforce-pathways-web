@@ -19,11 +19,18 @@ NEXT_PUBLIC_USE_API_MOCKS=true pnpm dev
 
 The app runs at `http://127.0.0.1:5173`.
 
+## Docker
+
+```bash
+docker build -t dewr-workforce-pathways-web:local .
+docker run --rm -p 8080:80 dewr-workforce-pathways-web:local
+```
+
 ## CI / GitHub Actions
 
 The repository uses GitHub Actions to validate the workspace on `main` and pull requests.
 
-CI uses Node.js 24 with Corepack-managed `pnpm@9.15.4`, matching the `packageManager` field in `package.json`. The Playwright end-to-end job is pinned to `ubuntu-22.04` because the current `@playwright/test@1.42.1` Linux dependency installer requests `libasound2`, which is no longer available under that name on Ubuntu 24.04 (`ubuntu-latest` / Noble).
+CI uses Node.js 20.19.0 with Corepack-managed `pnpm@9.15.4`, matching the `packageManager` field in `package.json`. The Playwright end-to-end job is pinned to `ubuntu-22.04` because the current `@playwright/test@1.42.1` Linux dependency installer requests `libasound2`, which is no longer available under that name on Ubuntu 24.04 (`ubuntu-latest` / Noble).
 
 The CI workflow runs:
 
@@ -32,6 +39,7 @@ The CI workflow runs:
 - `pnpm test`
 - `pnpm typecheck`
 - `pnpm build`
+- Docker image build
 - `pnpm exec playwright install --with-deps chromium`
 - `pnpm test:e2e`
 
