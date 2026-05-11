@@ -14,4 +14,11 @@ test.describe('DEWR workforce pathways intelligence', () => {
     await explorer.chooseYouthScenario();
     await explorer.expectYouthScenarioKpis();
   });
+
+  test('updates map evidence encoding when layer toggles change', async ({ explorer }) => {
+    await explorer.goto();
+    await explorer.expectRegionalMap();
+    await explorer.chooseParticipantOutcomesLayer();
+    await explorer.expectOutcomesMapEncoding();
+  });
 });

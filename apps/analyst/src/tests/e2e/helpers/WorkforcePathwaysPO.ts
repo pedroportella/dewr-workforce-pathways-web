@@ -42,8 +42,20 @@ export class WorkforcePathwaysPO {
   }
 
   async expectRegionalMap() {
-    await expect(this.page.getByRole('list', { name: 'Regional workforce intelligence map' })).toBeVisible();
-    await expect(this.page.getByRole('button', { name: /Brisbane Inner City/ })).toBeVisible();
+    await expect(this.page.getByRole('region', { name: 'Regional workforce intelligence map' })).toBeVisible();
+    await expect(this.page.getByText('Employment + Skills + Training')).toBeVisible();
+    await expect(this.page.getByText('Lower completions')).toBeVisible();
     await expect(this.page.getByText('Selected region')).toBeVisible();
+    await expect(this.page.getByText('Brisbane Inner City')).toBeVisible();
+  }
+
+  async chooseParticipantOutcomesLayer() {
+    await this.page.getByLabel('Participant outcomes').check();
+  }
+
+  async expectOutcomesMapEncoding() {
+    await expect(this.page.getByText('Employment + Skills + Training + Participant outcomes')).toBeVisible();
+    await expect(this.page.getByText('Lower sustained outcomes')).toBeVisible();
+    await expect(this.page.getByText('57.8% sustained')).toBeVisible();
   }
 }
