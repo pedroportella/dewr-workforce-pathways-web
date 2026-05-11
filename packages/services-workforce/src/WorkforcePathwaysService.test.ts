@@ -47,8 +47,7 @@ describe('createWorkforcePathwaysService', () => {
     expect(fetchMock).toHaveBeenCalledWith(
       `https://no-fallback-for-dewr-api${DEWR_WORKFORCE_DATASET_PATH}`,
       expect.objectContaining({
-        method: 'GET',
-        credentials: 'include'
+        method: 'GET'
       })
     );
   });

@@ -19,7 +19,6 @@ export function createWorkforcePathwaysService(): WorkforcePathwaysService {
         const res = await fetch(withDewrApi(DEWR_WORKFORCE_DATASET_PATH), {
           method: 'GET',
           headers: { Accept: 'application/json' },
-          credentials: 'include',
           signal: controller.signal
         });
 
